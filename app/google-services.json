@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "431577352638",
+    "firebase_url": "https://metroshiraz-afa8b.firebaseio.com",
+    "project_id": "metroshiraz-afa8b",
+    "storage_bucket": "metroshiraz-afa8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431577352638:android:a9a687b99106f1e3",
+        "android_client_info": {
+          "package_name": "ir.shirazmetroapp.metroshiraz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "431577352638-ieh53ml1j5qfhjbn14d60121rnu52o4f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ir.shirazmetroapp.metroshiraz",
+            "certificate_hash": "ee64919ffab1b9936b2513fcf3cadad2cc5f2f94"
+          }
+        },
+        {
+          "client_id": "431577352638-hla3ijbq4jslitsqquevjd8lobp8gn8p.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "431577352638-hla3ijbq4jslitsqquevjd8lobp8gn8p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3cdt7NCIzppK_B5Oyo4movVtAQiTsFy8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431577352638-hla3ijbq4jslitsqquevjd8lobp8gn8p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

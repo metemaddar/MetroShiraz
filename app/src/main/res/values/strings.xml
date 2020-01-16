@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">متروی شیراز</string>
+    <string name="textview">عالی هستید</string>
+    <string name="dont_late">دیر به مترو نرسید!</string>
+    <string name="button">دکمه</string>
+    <string name="dastgheib">به سمت دستغیب</string>
+    <string name="ehsan">به سمت احسان</string>
+    <string name="station">ایستگاه</string>
+    <string name="station_choose">ایستگاه مبدأ</string>
+    <string name="change_target">تغییر مقصد</string>
+    <string name="next_train_caption">زمان حرکت</string>
+    <string name="hello_value">
+        به اپلیکیشن متروی شیراز، خوش آمدید.
+        این نسخه اول است.
+        در این نسخه می‌توانید، زمان‌بندی ایستگاه را مشاهده نمایید.
+        کافی است ایستگاه مبدا و ایستگاه مقصد را انتخاب نمایید.
+    </string>
+</resources>

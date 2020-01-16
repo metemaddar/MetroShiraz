@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <Button
+        android:id="@+id/station_choose1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="@color/yellow"
+        android:onClick="GoSecondActivity"
+        android:text="@string/station_choose"
+        android:textColor="#684819"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dont_late"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="161dp"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/from_station"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:onClick="GoSecondActivity"
+        android:text="ایستگاه احسان"
+        android:textAlignment="center"
+        android:layout_below="@id/station_choose1"
+        android:background="@color/brown"
+        android:padding="3dp"
+        android:textColor="@color/yellow"
+        android:textSize="40sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="161dp"
+        android:gravity="center_horizontal" />
+
+    <TextSwitcher
+        android:id="@+id/to_station"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/from_station"
+        android:layout_marginTop="10pt"
+        android:onClick="ToggleTarget"
+
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="231dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textColor="@color/whiteblue"
+        android:background="@color/cyan"
+        android:textAlignment="center"
+        android:text="@string/ehsan"
+        android:gravity="center_horizontal" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textColor="@color/whiteblue"
+        android:background="@color/cyan"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
+
+
+
+    </TextSwitcher>
+
+    <TextView
+        android:id="@+id/time_caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/to_station"
+        android:layout_marginTop="5pt"
+        android:text="@string/next_train_caption"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_light"
+        android:textSize="25sp"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/TimeView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time_caption"
+        android:layout_marginTop="5dp"
+        android:onClick="GoToTimes"
+        android:text="08:33"
+        android:textAlignment="center"
+        android:textColor="@color/cyan"
+        android:textSize="70sp"
+        android:visibility="invisible"
+        android:gravity="center_horizontal" />
+
+
+
+</RelativeLayout>
