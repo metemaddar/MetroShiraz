@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 
@@ -22,6 +24,8 @@ public class ListTimes extends AppCompatActivity {
     Station start_station;
     TimeList<Date> times;
     TextView from_station_text;
+    String is_holiday;
+
 
     @Override
     protected void onResume() {
@@ -48,7 +52,15 @@ public class ListTimes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Date now = new Date();
+        String weekday = stationHelper.weekDay(now);
         setContentView(R.layout.activity_list_times);
+        if (weekday.equals("Friday")){
+            stationHelper.forceHoliday();
+            Switch s = (Switch) findViewById(R.id.switch2);
+            s.setChecked(true);
+        }
         from_station_text = findViewById(R.id.from_station2);
         Intent intent = getIntent();
         try {
@@ -80,9 +92,10 @@ public class ListTimes extends AppCompatActivity {
         update();
     }
     public void update() {
-        Date now = new Date();
+
+
         try {
-            times = stationHelper.getStationTimes(start_station_id,to_station,now);
+            times = stationHelper.getStationTimes(start_station_id,to_station);
         } catch (JSONException e) {
             e.printStackTrace();
         }

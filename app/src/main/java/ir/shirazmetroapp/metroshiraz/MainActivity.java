@@ -119,10 +119,6 @@ public class MainActivity extends AppCompatActivity {
             // Do something else
         }
         Date now = new Date();
-        Date friday = new Date(2020,1,17);
-        Log.d("Main",weekDay(friday));
-//        Toast.makeText(getApplicationContext(), weekDay(friday),
-//                Toast.LENGTH_LONG).show();
 
         times = stationHelper.getStationTimes(start_station.getId(),to_station,now);
 //        Toast.makeText(getApplicationContext(),

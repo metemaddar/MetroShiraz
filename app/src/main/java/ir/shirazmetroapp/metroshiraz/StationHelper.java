@@ -31,12 +31,11 @@ public class StationHelper {
     private JSONArray STATIONS_JSON = null;
     private JSONArray STOPS_JSON = null;
     private JSONArray STOPS_HOLIDAYS_JSON = null;
-    private boolean is_holiday = false;
+    private boolean IS_HOLIDAY = false;
     public static Integer D2E_START = 7*60+10;
     public static Integer D2E_END = 21*60+10;
     public static Integer E2D_START = 7*60+5;
     public static Integer E2D_END = 21*60+5;
-    public Boolean IS_HOLIDAY = false;
     private Boolean FORCE_HOLIDAY = false;
 
 
@@ -91,25 +90,26 @@ public class StationHelper {
 //        return time;
 //    }
 
-
-    public TimeList<Date> getStationTimes(Integer station_id, String to_station, Date input_date1) throws JSONException {
-//        String FRIDAY = weekDay(new Date(2020,1,17));
+    public void CheckHoliday(Date input_date1){
         if (weekDay(input_date1).equals("Friday") || FORCE_HOLIDAY) {
             Log.d("MainActivity","is_holiday was set to TRUE");
-            is_holiday = true;
+            IS_HOLIDAY = true;
         }
         else {
             Log.d("MainActivity","is_holiday was set to FALSE");
-            is_holiday = false;
+            IS_HOLIDAY = false;
         }
-        Log.d("MainActivity","WeekDay is " + weekDay(input_date1));
+    }
+
+
+    public TimeList<Date> getStationTimes(Integer station_id, String to_station) throws JSONException {
 
         JSONArray MY_JSON;
-        if (!is_holiday) {
-            MY_JSON = STOPS_JSON;
+        if (IS_HOLIDAY || FORCE_HOLIDAY) {
+            MY_JSON = STOPS_HOLIDAYS_JSON;
         }
         else {
-            MY_JSON = STOPS_HOLIDAYS_JSON;
+            MY_JSON = STOPS_JSON;
         }
 
         JSONObject station = MY_JSON.getJSONObject(station_id-1);
@@ -133,8 +133,10 @@ public class StationHelper {
         }
         return dates;
 
-
-
+    }
+    public TimeList<Date> getStationTimes(Integer station_id, String to_station, Date input_date2) throws JSONException {
+        CheckHoliday(input_date2);
+        return getStationTimes(station_id, to_station);
     }
 
     public Station getStationIdByName(String name) throws JSONException {
